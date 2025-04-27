@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 80px;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #153e35;
+    padding: 10px 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.title h1 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.title p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 0;
+    position: relative;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.search-container {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 15px;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    padding: 5px;
+    width: 200px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon {
+    color: #333;
+}
+
+.profile-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    background-color: #153e35;
+    color: white;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hamburger-menu:hover {
+    background-color: #0d2520;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    display: none;
+}
+
+.dropdown-menu p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown-menu .logout-btn {
+    display: block;
+    background-color: #d9534f;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.dropdown-menu .logout-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Show dropdown when active */
+.dropdown-menu.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .search-container {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    
+    .search-input {
+        width: 150px;
+    }
+}
+
+
+/* Container and Table Styles */
+/* Add these updates to your existing CSS */
+
+/* Table container with fixed layout */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+
+/* Fixed table layout prevents column width changes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 2px solid #333;
+    table-layout: fixed; /* This is key for stability */
+}
+
+/* Set specific widths for columns */
+thead th:nth-child(1) { width: 18%; } /* Name */
+thead th:nth-child(2) { width: 15%; } /* Contact */
+thead th:nth-child(3) { width: 12%; } /* Area */
+thead th:nth-child(4) { width: 15%; } /* Street */
+thead th:nth-child(5) { width: 20%; } /* Landmark */
+thead th:nth-child(6) { width: 20%; } /* ID Image */
+
+/* Consistent cell layout */
+tbody td {
+    padding: 12px;
+    border: 2px solid #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ... for text that's too long */
+}
+
+/* Image sizing */
+td img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    width: 150px; /* Fixed width */
+    height: auto;
+    object-fit: contain; /* Maintains aspect ratio */
+    vertical-align: middle;
+    
+}
+
+/* Keep consistent height even when hidden */
+.hidden {
+    display: none;
+}
+
+/* Add a minimum height to the table body to prevent jumping */
+#formData {
+    min-height: 100px;
+}
+
+/*Forms*/
+.forms{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 400px;
+
+}
+.links {
+    display: flex;
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.link {
+    color: #153e35;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 0;
+    position: relative;
+    font-size: 16px;
+}
+
+.link:hover {
+    opacity: 0.8;
+}
+
+.link.active {
+    font-weight: 600;
+}
+
+.link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #153e35;
+    
+}

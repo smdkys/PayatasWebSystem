@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #E9EFEC;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #153e35;
+    padding: 25px 50px;
+    color: white;
+}
+
+.title h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.title p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.leaves {
+    position: relative;
+    background: url('../img/getbg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Persistent dark overlay */
+.leaves::before {
+    content: "";  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Ensure text is above everything */
+.leaves h1,
+.leaves p {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fade transition background layer */
+.fade-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1{
+    font-size: 50px;
+    margin-top: -80px;
+}
+.hero-content p{
+    font-size: 20px;
+    margin-top: -35px;
+}
+
+.hero-content a {
+    display: inline-block; 
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 6px; 
+    font-weight: bold;
+    font-size: 16px; 
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(135deg, #153e35, #367c39); 
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Hover effect */
+.hero-content a:hover {
+    background: linear-gradient(135deg, #367c39, #2a5f2a); 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.hero-content a:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Card Styling */
+.service-card {
+    background: #E9EFEC;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon/Image Styling */
+.service-card img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Title & Description */
+.service-card h3 {
+    font-size: 18px;
+    color: #153e35; 
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+.faq {
+    max-width: 100%;
+    padding: 50px;
+    background-color: #c4dad2; 
+}
+.faq-category{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+
+h2 {
+    font-size: 24px;
+    color: #153e35;
+    padding-bottom: 40px;
+}
+
+.faq-category h3 {
+    font-size: 18px;
+    color: #153e35;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+/* FAQ Items */
+.faq-item {
+    text-align: left;
+    margin: 10px 0;
+    
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Arrow Rotation */
+.faq-question.active span {
+    transform: rotate(180deg);
+}
+
+/* Help Text */
+.help-text {
+    margin-top: 100px;
+    font-size: 16px;
+    
+}
+.help-text a {
+    color: #00755E;
+    text-decoration: none;
+    font-weight: bold;
+}
+.rere{
+    margin-top: 40px;
+}
+
+/* Get Started Button */
+.get-started-btn {
+    display: inline-block;  
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 6px; 
+    font-weight: bold;
+    font-size: 16px; 
+    text-decoration: none; 
+    text-align: center;
+    background: linear-gradient(135deg, #153e35, #367c39); 
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out; 
+}
+
+.get-started-btn:hover {
+    background: linear-gradient(135deg, #367c39, #2a5f2a); 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #00755E;
+    text-decoration: none;
+}
